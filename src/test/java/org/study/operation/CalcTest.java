@@ -23,4 +23,13 @@ public class CalcTest {
         assertThat(Calc.run("10 / 10")).isEqualTo(1);
     }
 
+    @Test
+    @DisplayName("괄호가 들어간 사칙연산을 성공한다.")
+    void CalcReturnWithBracketTest() {
+        assertThat(Calc.run("(10 + 10)")).isEqualTo(20);
+        assertThat(Calc.run("(10 - 10)")).isEqualTo(0);
+        assertThat(Calc.run("(10 * 10)")).isEqualTo(100);
+        assertThat(Calc.run("(10 / 10)")).isEqualTo(1);
+    }
+
 }

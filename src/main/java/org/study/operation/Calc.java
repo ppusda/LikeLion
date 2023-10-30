@@ -5,6 +5,8 @@ public class Calc {
     static int run(String exp) {
         if(exp.isBlank()) return 0;
 
+        exp = processBracket(exp);
+
         String[] expBits = exp.split(" ");
 
         if(expBits.length > 1) {
@@ -28,5 +30,13 @@ public class Calc {
             return 0;
         }
     }
+
+    static String processBracket(String exp) {
+        if(exp.contains("(")) {
+            return exp.substring(exp.lastIndexOf("(")+1, exp.indexOf(")"));
+        }
+
+        return exp;
+    }
 }
-// word.substring(word.lastIndexOf("(")+1, word.indexOf(")")).split(" ");
+
